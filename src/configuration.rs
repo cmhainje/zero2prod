@@ -64,7 +64,7 @@ pub fn get_configuration() -> Result<Settings, config::ConfigError> {
     // Initialize our configuration reader
     let settings = config::Config::builder()
         .add_source(config::File::from(cfg_dir.join("base.yaml")))
-        .add_source(config::File::from(cfg_dir.join(&env_filename)))
+        .add_source(config::File::from(cfg_dir.join(env_filename)))
         // Add settings from env varibles
         // e.g. APP_APPLICATION__PORT sets Settings.application.port
         .add_source(
